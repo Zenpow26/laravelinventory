@@ -18,7 +18,7 @@
                     <thead>
                         <th width="5%">#</th>
                         <th>Date</th>
-                        <th>MemberCode</th>
+                        <th>CustomerCode</th>
                         <th>Quantity</th>
                         <th>Total Price</th>
                         <th>Discount</th>

@@ -173,7 +173,8 @@ class PenjualanController extends Controller
         $detail = PenjualanDetail::with('produk')
             ->where('id_penjualan', session('id_penjualan'))
             ->get();
-
+    
+        // Now excluding the 'produk' column from the $detail variable
         $pdf = PDF::loadView('penjualan.nota_besar', compact('setting', 'penjualan', 'detail'));
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream('Transaction-'. date('Y-m-d-his') .'.pdf');
