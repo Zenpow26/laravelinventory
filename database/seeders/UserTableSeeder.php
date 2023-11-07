@@ -18,15 +18,16 @@ class UserTableSeeder extends Seeder
             [
                 'name' => 'Administrator',
                 'email' => 'admin@mail.com',
-                'password' => bcrypt('codeastro.com'),
-                'foto' => '/img/user.jpg',
+                'password' => bcrypt('mese123'),
+                'foto' => '/img/20231101040225.jpg
+                ',
                 'level' => 1
             ],
             [
-                'name' => 'CodeAstro',
-                'email' => 'astro@mail.com',
-                'password' => bcrypt('codeastro.com'),
-                'foto' => '/img/user.jpg',
+                'name' => 'Berto',
+                'email' => 'admin@mail.com',
+                'password' => bcrypt('mese1234'),
+                'foto' => '/img/20231101040225.jpg                ',
                 'level' => 2
             ]
         );

@@ -12,6 +12,7 @@
                         <th width="5%">#</th>
                         <th>Code</th>
                         <th>Name</th>
+                        <th>Wholesal(W) Retailer(R)</th>
                         <th>Purchase Price</th>
                         <th><i class="fa fa-cog"></i></th>
                     </thead>
@@ -21,6 +22,7 @@
                                 <td width="5%">{{ $key+1 }}</td>
                                 <td><span class="label label-success">{{ $item->kode_produk }}</span></td>
                                 <td>{{ $item->nama_produk }}</td>
+                                <td>{{ $item->merk }}</td>
                                 <td>{{ $item->harga_beli }}</td>
                                 <td>
                                     <a href="#" class="btn btn-primary btn-xs btn-flat"
