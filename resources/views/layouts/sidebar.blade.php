@@ -57,7 +57,7 @@
             </li>
             <li>
                 <a href="{{ route('penjualan.index') }}">
-                    <i class="fa fa-dollar"></i> <span>Sales List</span>
+                    <i class="fa fa-money"></i> <span>Sales List</span>
                 </a>
             </li>
             <li>
@@ -84,7 +84,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route("setting.index") }}">
+                <a href="{{ route('setting.index') }}">
                     <i class="fa fa-cogs"></i> <span>Settings</span>
                 </a>
             </li>

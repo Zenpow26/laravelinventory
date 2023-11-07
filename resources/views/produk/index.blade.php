@@ -32,7 +32,7 @@
                             <th>Code</th>
                             <th>Name</th>
                             <th>Category</th>
-                            <th>Brand</th>
+                            <th>Wholesale(W)Retail(R)</th>
                             <th>Purchase Price</th>
                             <th>Selling Price</th>
                             <th>Discount</th>
@@ -54,66 +54,29 @@
     let table;
 
     $(function () {
-    table = $('.table').DataTable({
-        responsive: true,
-        processing: true,
-        serverSide: true,
-        autoWidth: false,
-        ajax: {
-            url: '{{ route('produk.data') }}',
-        },
-        columns: [
-            {data: 'select_all', searchable: false, sortable: false},
-            {data: 'DT_RowIndex', searchable: false, sortable: false},
-            {data: 'kode_produk'},
-            {data: 'nama_produk'},
-            {data: 'nama_kategori'},
-            {data: 'merk'},
-            {
-                data: 'harga_beli',
-                render: function (data) {
-                    return formatNumber(data);
-                }
+        table = $('.table').DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            autoWidth: false,
+            ajax: {
+                url: '{{ route('produk.data') }}',
             },
-            {
-                data: 'harga_jual',
-                render: function (data) {
-                    return formatNumber(data);
-                }
-            },
-            {
-    data: 'diskon',
-    render: function (data) {
-        const formattedValue = parseFloat(data);
-        if (!isNaN(formattedValue)) {
-            return formattedValue.toLocaleString('en-US') + '%';
-        } else {
-            return 'Invalid Discount';
-        }
-    }
-},
+            columns: [
+                {data: 'select_all', searchable: false, sortable: false},
+                {data: 'DT_RowIndex', searchable: false, sortable: false},
+                {data: 'kode_produk'},
+                {data: 'nama_produk'},
+                {data: 'nama_kategori'},
+                {data: 'merk'},
+                {data: 'harga_beli'},
+                {data: 'harga_jual'},
+                {data: 'diskon'},
+                {data: 'stok'},
+                {data: 'aksi', searchable: false, sortable: false},
+            ]
+        });
 
-            {
-                data: 'stok',
-                render: function (data) {
-                    return formatStock(data);
-                }
-            },
-            {data: 'aksi', searchable: false, sortable: false},
-        ]
-    });
-    function formatNumber(number) {
-    const formattedNumber = new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'PHP',
-        minimumFractionDigits: 3,
-        maximumFractionDigits: 4
-    }).format(number);
-    return formattedNumber.replace('PHP', '₱').replace(/\./g, ',');
-}
-function formatStock(stock) {
-    return stock.replace(/\./g, '');
-}
         $('#modal-form').validator().on('submit', function (e) {
             if (! e.preventDefault()) {
                 $.post($('#modal-form form').attr('action'), $('#modal-form form').serialize())

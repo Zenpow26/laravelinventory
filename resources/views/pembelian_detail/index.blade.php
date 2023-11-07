@@ -159,7 +159,7 @@ Purchase
             const formattedCurrency = parsedValue.toLocaleString('en-PH', {
                 style: 'currency',
                 currency: 'PHP',
-                minimumFractionDigits: 3,  // Ensure whole numbers are displayed without decimal places
+                minimumFractionDigits: 0,  // Ensure whole numbers are displayed without decimal places
             }).replace(/\./g, ',');
             return formattedCurrency;
         } else {
@@ -176,7 +176,7 @@ render: function (data) {
         const formattedCurrency = parsedValue.toLocaleString('en-PH', {
             style: 'currency',
             currency: 'PHP',
-            minimumFractionDigits: 3  // Ensure whole numbers are displayed without decimal places
+            minimumFractionDigits: 0  // Ensure whole numbers are displayed without decimal places
         }).replace(/\./g, ',');
         return formattedCurrency;
     } else {
