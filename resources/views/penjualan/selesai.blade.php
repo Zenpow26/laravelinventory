@@ -24,6 +24,7 @@
                 <button class="btn btn-warning btn-flat" onclick="notaKecil('{{ route('transaksi.nota_kecil') }}', 'Nota Kecil')">Print Invoice</button>
                 @else
                 <button class="btn btn-warning btn-flat" onclick="notaBesar('{{ route('transaksi.nota_besar') }}', 'Nota PDF')">Print Invoice</button>
+                <button class="btn btn-info btn-flat" onclick="notaInvoice('{{ route('transaksi.invoice') }}', 'Invoice')">Duplicate Invoice</button>
                 @endif
                 <a href="{{ route('transaksi.baru') }}" class="btn btn-primary btn-flat">New Transaction</a>
             </div>
@@ -40,7 +41,7 @@
     function notaKecil(url, title) {
         popupCenter(url, title, 625, 500);
     }
-    function notaDuplicate(url, title) {
+    function notaInvoice(url, title) {
         popupCenter(url, title, 900, 675);
     }
     function notaBesar(url, title) {

@@ -35,7 +35,7 @@
     }
 
     .watermark::after {
-        content: "ORIGINAL";
+        content: "DUPLICATE";
         color: rgba(0, 0, 0, 0.1); /* Change the color and opacity of the watermark */
         font-size: 40px;
         position: absolute;
@@ -47,7 +47,7 @@
     </style>
 </head>
 <body>
-<p style="color: red;"><i>Transfer Receipt Form</i><p>
+    <p style="color: red;"><i>Transfer Receipt Form</i><p>
     <table width="100%">
         <tr>
             <td rowspan="4" width="60%">
@@ -113,8 +113,6 @@
         <td class="text-right" style="padding: 5px;"></td>
     </tr>
 </tfoot>
-
-
         <tfoot>
         <tr>
                 <td colspan="6" class="text-right"><b>Discount</b></td>

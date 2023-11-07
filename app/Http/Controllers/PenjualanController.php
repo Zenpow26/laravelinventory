@@ -162,7 +162,22 @@ class PenjualanController extends Controller
         
         return view('penjualan.nota_kecil', compact('setting', 'penjualan', 'detail'));
     }
-
+    public function notaInvoice()
+    {
+        $setting = Setting::first();
+        $penjualan = Penjualan::find(session('id_penjualan'));
+        if (! $penjualan) {
+            abort(404);
+        }
+        $detail = PenjualanDetail::with('produk')
+            ->where('id_penjualan', session('id_penjualan'))
+            ->get();
+    
+        // Now excluding the 'produk' column from the $detail variable
+        $pdf = PDF::loadView('penjualan.invoice', compact('setting', 'penjualan', 'detail'));
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->stream('Transaction-'. date('Y-m-d-his') .'.pdf');
+    }
     public function notaBesar()
     {
         $setting = Setting::first();
