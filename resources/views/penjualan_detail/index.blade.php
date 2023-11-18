@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('title')
@@ -162,22 +163,28 @@ padding-top: 5px;
             { data: 'kode_produk' },
             { data: 'nama_produk' },
             {
-                data: 'harga_jual',
-render: function (data) {
-    const parsedValue = parseFloat(data.toString().replace(/[^0-9.-]+/g,""));
-    if (!isNaN(parsedValue) && isFinite(parsedValue)) {
-        const formattedCurrency = parsedValue.toLocaleString('en-PH', {
-            style: 'currency',
-            currency: 'PHP',
-            minimumFractionDigits: 0,  // Ensure whole numbers are displayed without decimal places
-        }).replace(/\./g, ',');
-        return formattedCurrency;
-    } else {
-        return "Invalid Price";
+    data: 'harga_jual',
+    render: function (data, type, row) {
+        const parsedValue = parseFloat(data.toString().replace(/[^0-9.-]+/g, ""));
+        if (!isNaN(parsedValue) && isFinite(parsedValue)) {
+            const formattedCurrency = parsedValue.toLocaleString('en-PH', {
+                style: 'currency',
+                currency: 'PHP',
+                minimumFractionDigits: 0,
+            }).replace(/\./g, ',');
+            
+            // You can add an input field for each price, allowing users to edit the price
+            if (type === 'display') {
+                return `<input type="text" class="form-control edit-price" data-id="${row.id}" value="${formattedCurrency}">`;
+            } else {
+                return parsedValue; // For sorting and filtering
+            }
+        } else {
+            return "Invalid Price";
+        }
     }
-}
+},
 
-            },
             { data: 'jumlah' },
             { data: 'diskon', render: $.fn.dataTable.render.number(',', '.', 0, '', ' % ') },
             {

@@ -12,7 +12,7 @@
                         <th width="5%">#</th>
                         <th>Code</th>
                         <th>Name</th>
-                        <th>Wholesal(W) Retailer(R)</th>
+                        <th>Brand</th>
                         <th>Purchase Price</th>
                         <th><i class="fa fa-cog"></i></th>
                     </thead>

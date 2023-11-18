@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="merk" class="col-lg-2 col-lg-offset-1 control-label">Wholesale(W)Retail(R)</label>
+                        <label for="merk" class="col-lg-2 col-lg-offset-1 control-label">Brand</label>
                         <div class="col-lg-6">
                             <input type="text" name="merk" id="merk" class="form-control">
                             <span class="help-block with-errors"></span>
@@ -48,6 +48,13 @@
                         <label for="harga_jual" class="col-lg-2 col-lg-offset-1 control-label">Selling Price</label>
                         <div class="col-lg-6">
                             <input type="number" name="harga_jual" id="harga_jual" class="form-control" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="harga_retail" class="col-lg-2 col-lg-offset-1 control-label">Retail Price</label>
+                        <div class="col-lg-6">
+                            <input type="number" name="harga_retail" id="harga_retail" class="form-control" required>
                             <span class="help-block with-errors"></span>
                         </div>
                     </div>

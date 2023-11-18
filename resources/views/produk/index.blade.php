@@ -32,9 +32,10 @@
                             <th>Code</th>
                             <th>Name</th>
                             <th>Category</th>
-                            <th>Wholesale(W)Retail(R)</th>
+                            <th>Brand</th>
                             <th>Purchase Price</th>
-                            <th>Selling Price</th>
+                            <th>Wholesale Price</th>
+                            <th>Retail Price</th>
                             <th>Discount</th>
                             <th>Stock</th>
                             <th width="15%"><i class="fa fa-cog"></i></th>
@@ -71,6 +72,7 @@
                 {data: 'merk'},
                 {data: 'harga_beli'},
                 {data: 'harga_jual'},
+                {data: 'harga_retail'},
                 {data: 'diskon'},
                 {data: 'stok'},
                 {data: 'aksi', searchable: false, sortable: false},
@@ -122,6 +124,7 @@
                 $('#modal-form [name=merk]').val(response.merk);
                 $('#modal-form [name=harga_beli]').val(response.harga_beli);
                 $('#modal-form [name=harga_jual]').val(response.harga_jual);
+                $('#modal-form [name=harga_retail]').val(response.harga_retail);
                 $('#modal-form [name=diskon]').val(response.diskon);
                 $('#modal-form [name=stok]').val(response.stok);
             })
